@@ -1,15 +1,16 @@
 <!--
 
-chessboard.html V0.1
+chessboard.html V0.2
 
-  Vertical stripe of 8 black and white cells
+  2 Vertical stripes of 8 black and white cells
 
-  Draws a stripe of 8 black and white cells, which has 1/8 of the window width
+  Draws 2 stripes of 8 black and white cells, which have 1/8 of the window width
 
   Tested with
     Firefox 20.0 for Windows
     Chrome 26.0 for Windows
     Opera 12.5 for Windows
+    Internet Explorer 10.0 for Windows
 -->
 <html>
 <title>WWW2013 CSS Challenge Chessboard</title>
@@ -21,8 +22,10 @@ body {
   background-size: 12.5% 100%;
   background-repeat: no-repeat;
   background-image: 
-    repeating-linear-gradient(black, black 12.5%, transparent 12.5%, transparent 25%);
-  background-position: 0 0;
+    repeating-linear-gradient(black, black 12.5%, transparent 12.5%, transparent 25%)
+  , repeating-linear-gradient(transparent, transparent 12.5%, black 12.5%, black 25%)
+  ;
+  background-position: 0 0, 14.286% 0;
 }
 div {
   height: 100%;
