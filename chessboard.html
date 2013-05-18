@@ -2,9 +2,7 @@
 
 chessboard.html V0.2
 
-  2 Vertical stripes of 8 black and white cells
-
-  Draws 2 stripes of 8 black and white cells, which have 1/8 of the window width
+  8x8 chessboard background
 
   Tested with
     Firefox 20.0 for Windows
@@ -24,8 +22,14 @@ body {
   background-image: 
     repeating-linear-gradient(black, black 12.5%, transparent 12.5%, transparent 25%)
   , repeating-linear-gradient(transparent, transparent 12.5%, black 12.5%, black 25%)
+  , repeating-linear-gradient(black, black 12.5%, transparent 12.5%, transparent 25%)
+  , repeating-linear-gradient(transparent, transparent 12.5%, black 12.5%, black 25%)
+  , repeating-linear-gradient(black, black 12.5%, transparent 12.5%, transparent 25%)
+  , repeating-linear-gradient(transparent, transparent 12.5%, black 12.5%, black 25%)
+  , repeating-linear-gradient(black, black 12.5%, transparent 12.5%, transparent 25%)
+  , repeating-linear-gradient(transparent, transparent 12.5%, black 12.5%, black 25%)
   ;
-  background-position: 0 0, 14.286% 0;
+  background-position: 0 0, 14.286% 0, 28.571% 0, 42.857% 0, 57.143% 0, 71.428% 0, 85.714% 0, 100% 0;
 }
 div {
   height: 100%;
