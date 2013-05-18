@@ -1,8 +1,8 @@
 <!--
 
-chessboard.html V0.2
+chessboard.html V0.4
 
-  8x8 chessboard background
+  Centered chessboard
 
   Tested with
     Firefox 20.0 for Windows
@@ -14,7 +14,13 @@ chessboard.html V0.2
 <title>WWW2013 CSS Challenge Chessboard</title>
 <style type="text/css">
 
-body {
+/* chessboard size, position and background */
+#chessboard {
+  position: absolute;
+  width: 80vmin;
+  height: 80vmin;
+  left: calc(50vw - 40vmin);
+  top: calc(50vh - 40vmin);
   padding: 0;
   margin: 0;
   background-size: 12.5% 100%;
@@ -30,10 +36,14 @@ body {
   , repeating-linear-gradient(transparent, transparent 12.5%, black 12.5%, black 25%)
   ;
   background-position: 0 0, 14.286% 0, 28.571% 0, 42.857% 0, 57.143% 0, 71.428% 0, 85.714% 0, 100% 0;
+  border: 2px solid black;
+  box-shadow: 1vw 1vh 1vmax #420;
 }
 div {
   height: 100%;
 }
 
 </style>
-<div></div>
+
+<!-- chessboard background is set using CSS -->
+<div id="chessboard"></div>
