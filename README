@@ -1,29 +1,54 @@
 chessboard.html
 
+  V0.5 - Centered chessboard with pieces, and row and column names
+  - Chess pieces are implemented using one span each, which contains
+    the proper unicode character to render it.
+    Pieces are positioned using CSS classes for rows and cols
+
+  - Row and column labels are decoration, not content. For that reason
+    choice has been made to implement them using CSS.
+    Since it is impossible to have multiple :before or :after
+    pseudo-classes, an additional div embedding the chessboard is needed.
+
+    One difficulty is that there is no way to fix or know the width of
+    characters, or character spacing (meaning the horizontal space from the
+    start of one character to the start of the next one). For that
+    I chose a fixed width font, specified the character height (aka
+    the ex and em units), guessed the aspect ratio of the characters,
+    and minimized the errors by distributing them left and right of
+    a centered string instead of adding them from left to right).
+
+  - Tested with :
+
+    Firefox 20.0 for Windows ......... [OK]
+    Internet Explorer 10.0 for Windows [partially OK]
+    Chrome 26.0 for Windows .......... [FAIL]
+    Opera 12.5 for Windows ........... [FAIL]
+
   V0.4 - Centered chessboard
   - Centered Chessboard using CSS3 viewport percentage units, anc calc()
     http://www.w3.org/TR/css3-values/#viewport-relative-lengths
     http://www.w3.org/TR/css3-values/#calc
 
-    Tested with :
+  - Tested with :
 
-      Firefox 20.0 for Windows ......... [OK]
+    Firefox 20.0 for Windows ......... [OK]
 
-      Internet Explorer 10.0 for Windows [partially OK]
-      - chessboard properly centered, but no box-shadow
-        viewport units and calc() are not recognized in the
-        context of box-shadow, even if those are properly interpreted
-        to center the chessboard...
+    Internet Explorer 10.0 for Windows [partially OK]
+    - chessboard properly centered, but no box-shadow
+      viewport units and calc() are not recognized in the
+      context of box-shadow, even if those are properly interpreted
+      to center the chessboard...
 
-      Chrome 26.0 for Windows .......... [partially OK]
-      - displays rounding error at bottom of chessboard
-      - properly scales the chessboard but doesn't position it properly
-        (flags an invalid value for top and left)
-      - no box-shadow
+    Chrome 26.0 for Windows .......... [partially OK]
+    - displays rounding error at bottom of chessboard
+    - properly scales the chessboard but doesn't position it properly
+      (flags an invalid value for top and left)
+    - no box-shadow
 
-      Opera 12.5 for Windows ........... [NOT OK]
-      - chessboard not centered, no box shadow
-        (does not implement viewport units nor calc())
+    Opera 12.5 for Windows ........... [FAIL]
+    - chessboard not centered, no box shadow
+      (does not implement viewport units nor calc())
    
 
   V0.3 - 8x8 chessboard background

@@ -1,14 +1,14 @@
 <!--
 
-chessboard.html V0.4
+chessboard.html V0.5
 
-  Centered chessboard
+  Centered chessboard with pieces, and row and column names
 
-  Tested with
-    Firefox 20.0 for Windows
-    Chrome 26.0 for Windows
-    Opera 12.5 for Windows
-    Internet Explorer 10.0 for Windows
+  Tested with : (see README file)
+    Firefox 20.0 for Windows ... [OK]
+    IE 10.0 for Windows ........ [partially OK]
+    Chrome 26.0 for Windows .... [FAIL]
+    Opera 12.5 for Windows  .... [FAIL]
 -->
 <html>
 <title>WWW2013 CSS Challenge Chessboard</title>
@@ -43,7 +43,124 @@ div {
   height: 100%;
 }
 
+/* column names */
+#chessboard:before, #chessboard:after {
+  content: 'abcdefgh';
+  color: black;
+  position: absolute;
+  font-size: 5vmin;
+  line-height: 1.33em;             /* default value, override div:before */
+  letter-spacing: calc(10vmin - 1.33ex); /* approximate, depends on font */
+  font-family: monospace;    /* to minimize letter-spacing approximation */
+  font-size-adjust: 0.5;     /* to minimize letter-spacing approximation */
+  padding-left: calc(5vmin - 0.7ex);         /* position start of string */
+  width: calc(75vmin + 0.7ex);               /*     80vim - padding-left */
+  left: -2px;                                /*  chessboard border-width */
+}
+#chessboard:before {
+  top: -1.33em;
+}
+#chessboard:after {
+  top: calc(80vmin + 0.33em);
+}
+
+/* row numbers  */
+div:before, div:after {
+  content: '1' '\A' '2' '\A' '3' '\A' '4' '\A' '5' '\A' '6' '\A' '7' '\A' '8';
+  color: black;
+  position: absolute;
+  font-size: 5vmin;
+  font-family: monospace;
+  white-space: pre;
+  line-height: 10vmin;
+  top: calc(50vh - 40vmin);
+}
+div:before {
+  left: calc(50vw - 45vmin);
+}
+div:after {
+  left: calc(50vw + 40vmin + 1.4ex);
+}
+
+/* chess pieces */
+span {
+  color: red;
+  font-size: 9.6vmin;
+  line-height: 10vmin;
+  display: block;
+  position: absolute;
+}
+
+/* color of chess pieces */
+.black { color: maroon; }
+.white { color: #a66; }
+
+/* classes for row positioning */
+.r8 { top:  0.4vmin; }
+.r7 { top: 10.4vmin; }
+.r6 { top: 20.4vmin; }
+.r5 { top: 30.4vmin; }
+.r4 { top: 40.4vmin; }
+.r3 { top: 50.4vmin; }
+.r2 { top: 60.4vmin; }
+.r1 { top: 70.4vmin; }
+
+/* classes for column positioning */
+.a { left:  0.2vmin; }
+.b { left: 10.2vmin; }
+.c { left: 20.2vmin; }
+.d { left: 30.2vmin; }
+.e { left: 40.2vmin; }
+.f { left: 50.2vmin; }
+.g { left: 60.2vmin; }
+.h { left: 70.2vmin; }
+
 </style>
 
+<!-- to carry row numbers -->
+<div>
+
 <!-- chessboard background is set using CSS -->
-<div id="chessboard"></div>
+<div id="chessboard">
+
+ <!-- chess pieces are rendered via unicode characters -->
+ <!-- ... and positioned via CSS classes -->
+
+ <!-- black pieces -->
+ <span class="black a r8">&#9820;</span>
+ <span class="black b r8">&#9822;</span>
+ <span class="black c r8">&#9821;</span>
+ <span class="black d r8">&#9819;</span>
+ <span class="black e r8">&#9818;</span>
+ <span class="black f r8">&#9821;</span>
+ <span class="black g r8">&#9822;</span>
+ <span class="black h r8">&#9820;</span>
+ <span class="black a r7">&#9823;</span>
+ <span class="black b r7">&#9823;</span>
+ <span class="black c r7">&#9823;</span>
+ <span class="black d r7">&#9823;</span>
+ <span class="black e r7">&#9823;</span>
+ <span class="black f r7">&#9823;</span>
+ <span class="black g r7">&#9823;</span>
+ <span class="black h r7">&#9823;</span>
+
+ <!-- white pieces -->
+ <span class="white a r1">&#9814;</span>
+ <span class="white b r1">&#9816;</span>
+ <span class="white c r1">&#9815;</span>
+ <span class="white d r1">&#9813;</span>
+ <span class="white e r1">&#9812;</span>
+ <span class="white f r1">&#9815;</span>
+ <span class="white g r1">&#9816;</span>
+ <span class="white h r1">&#9814;</span>
+ <span class="white a r2">&#9817;</span>
+ <span class="white b r2">&#9817;</span>
+ <span class="white c r2">&#9817;</span>
+ <span class="white d r2">&#9817;</span>
+ <span class="white e r2">&#9817;</span>
+ <span class="white f r2">&#9817;</span>
+ <span class="white g r2">&#9817;</span>
+ <span class="white h r2">&#9817;</span>
+</div>
+
+</div>
