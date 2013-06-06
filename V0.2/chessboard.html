@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<!-- chessboard.html V0.2 Try 1 : naively display 2 stripes of 8 B&W cells -->
+
+<title>WWW2013 CSS Challenge Chessboard</title>
+<style type="text/css">
+
+body {
+  padding: 0;
+  margin: 0;
+  background-size: 12.5% 100%;
+  background-repeat: no-repeat;
+  background-image:
+    repeating-linear-gradient(black, black 12.5%, white 12.5%, white 25%)
+  , repeating-linear-gradient(white, white 12.5%, black 12.5%, black 25%)
+  ;
+  background-position: 0 0, 14.286% 0;
+}
+html, body {
+  height: 100%;
+}
+
+</style>
