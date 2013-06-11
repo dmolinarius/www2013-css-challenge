@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<!-- chessboard.html V0.4 step 5 - set chessboard shadow size using viewport units -->
+
+<title>WWW2013 CSS Challenge Chessboard</title>
+<style type="text/css">
+
+/* viewport proeprties */
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background-color: white; /* fix ie's procopia client transparent buffer background */
+}
+
+/* chessboard size, position and background */
+#chessboard {
+  position: absolute;
+  width: 80vmin;
+  height: 80vmin;
+  left: calc(50vw - 40vmin);
+  top: calc(50vh - 40vmin);
+  border: 2px solid black;
+  box-shadow: 1vw 1vh 1vmax #420;
+
+  background-size: 12.5% 100%;
+  background-repeat: no-repeat;
+  background-image:
+    repeating-linear-gradient(black, black 12.5%, white 12.5%, white 25%)
+  , repeating-linear-gradient(white, white 12.5%, black 12.5%, black 25%)
+  , repeating-linear-gradient(black, black 12.5%, white 12.5%, white 25%)
+  , repeating-linear-gradient(white, white 12.5%, black 12.5%, black 25%)
+  , repeating-linear-gradient(black, black 12.5%, white 12.5%, white 25%)
+  , repeating-linear-gradient(white, white 12.5%, black 12.5%, black 25%)
+  , repeating-linear-gradient(black, black 12.5%, white 12.5%, white 25%)
+  , repeating-linear-gradient(white, white 12.5%, black 12.5%, black 25%)
+  ;
+  background-position: 0 0, 14.286% 0, 28.571% 0, 42.857% 0, 57.143% 0, 71.428% 0, 85.714% 0, 100% 0;
+}
+
+/* column names */
+#chessboard:before, #chessboard:after {
+  content: 'abcdefgh';
+  color: black;
+  font-size: 5vmin;
+  position: absolute;
+  width: 80vmin;
+  font-family: Lucida Console, Courier, monospace;            /* fixed width font */
+  letter-spacing: calc(10vmin - 1ch);   /* char spacing = cell width - char width */
+  padding-left: calc(5vmin - 0.5ch);                      /* half of char spacing */
+}
+ 
+#chessboard:before {
+  top: -1.5em;                      /* positioned above chessboard */
+}
+#chessboard:after {
+  top: calc(80vmin + 1vh + 0.33em); /* positioned under chessboard */
+}
+
+/* row numbers */
+#container:before, #container:after {
+  content: '1' '\A' '2' '\A' '3' '\A' '4' '\A' '5' '\A' '6' '\A' '7' '\A' '8';
+  color: black;
+  font-size: 5vmin;
+  line-height: 10vmin;
+  white-space: pre;
+  position: absolute;
+  top: calc(50vh - 40vmin);
+  font-family: Lucida Console, Courier, monospace;
+}
+#container:before {
+  left: calc(50vw - 45vmin - 0.5ch);
+}
+#container:after {
+  left: calc(51vw + 45vmin - 0.5ch);
+}
+
+</style>
+<div id="container">
+<div id="chessboard"></div>
+</div>

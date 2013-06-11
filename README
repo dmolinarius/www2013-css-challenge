@@ -1,9 +1,12 @@
 chessboard.html
 
-  V0.5 - Centered chessboard with pieces, and row and column names
+  V0.6 - Centered chessboard with pieces, and row and column names
+
   - Chess pieces are implemented using one span each, which contains
     the proper unicode character to render it.
     Pieces are positioned using CSS classes for rows and cols
+
+  V0.5 - Centered chessboard with row and column names
 
   - Row and column labels are decoration, not content. For that reason
     choice has been made to implement them using CSS.
@@ -17,6 +20,9 @@ chessboard.html
     the ex and em units), guessed the aspect ratio of the characters,
     and minimized the errors by distributing them left and right of
     a centered string instead of adding them from left to right).
+
+    [edit] => this last point has been fixed using the ch CSS3 units.
+              see directory V0.5 for more info (main dir will be updated soon)
 
   - Tested with :
 
