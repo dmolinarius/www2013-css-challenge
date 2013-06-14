@@ -1,18 +1,26 @@
-<!--
-
-chessboard.html V0.5
-
-  Centered chessboard with pieces, and row and column names
-
-  Tested with : (see README file)
-    Firefox 20.0 for Windows ... [OK]
-    IE 10.0 for Windows ........ [partially OK]
-    Chrome 26.0 for Windows .... [FAIL]
-    Opera 12.5 for Windows  .... [FAIL]
--->
+<!DOCTYPE html>
 <html>
+<meta charset="utf-8">
+<!--
+chessboard.html V0.6
+
+centered chessboard with shadow, annotations and chess pieces
+
+Tested with :
+  Firefox 20.0 for Windows [OK]
+  IE 10.0 for Windows      [almost OK]
+  Chrome 26.0 for Windows  [FAIL]
+  Opera 12.5 for Windows   [FAIL]
+-->
 <title>WWW2013 CSS Challenge Chessboard</title>
 <style type="text/css">
+
+/* viewport proeprties */
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
 
 /* chessboard size, position and background */
 #chessboard {
@@ -21,70 +29,64 @@ chessboard.html V0.5
   height: 80vmin;
   left: calc(50vw - 40vmin);
   top: calc(50vh - 40vmin);
-  padding: 0;
-  margin: 0;
-  background-size: 12.5% 100%;
-  background-repeat: no-repeat;
-  background-image: 
-    repeating-linear-gradient(black, black 12.5%, transparent 12.5%, transparent 25%)
-  , repeating-linear-gradient(transparent, transparent 12.5%, black 12.5%, black 25%)
-  , repeating-linear-gradient(black, black 12.5%, transparent 12.5%, transparent 25%)
-  , repeating-linear-gradient(transparent, transparent 12.5%, black 12.5%, black 25%)
-  , repeating-linear-gradient(black, black 12.5%, transparent 12.5%, transparent 25%)
-  , repeating-linear-gradient(transparent, transparent 12.5%, black 12.5%, black 25%)
-  , repeating-linear-gradient(black, black 12.5%, transparent 12.5%, transparent 25%)
-  , repeating-linear-gradient(transparent, transparent 12.5%, black 12.5%, black 25%)
-  ;
-  background-position: 0 0, 14.286% 0, 28.571% 0, 42.857% 0, 57.143% 0, 71.428% 0, 85.714% 0, 100% 0;
   border: 2px solid black;
   box-shadow: 1vw 1vh 1vmax #420;
-}
-div {
-  height: 100%;
+
+  background-size: 12.5% 100%;
+  background-repeat: no-repeat;
+  background-image:
+    repeating-linear-gradient(white, white 12.5%, black 12.5%, black 25%)
+  , repeating-linear-gradient(black, black 12.5%, white 12.5%, white 25%)
+  , repeating-linear-gradient(white, white 12.5%, black 12.5%, black 25%)
+  , repeating-linear-gradient(black, black 12.5%, white 12.5%, white 25%)
+  , repeating-linear-gradient(white, white 12.5%, black 12.5%, black 25%)
+  , repeating-linear-gradient(black, black 12.5%, white 12.5%, white 25%)
+  , repeating-linear-gradient(white, white 12.5%, black 12.5%, black 25%)
+  , repeating-linear-gradient(black, black 12.5%, white 12.5%, white 25%)
+  ;
+  background-position: 0 0, 14.286% 0, 28.571% 0, 42.857% 0, 57.143% 0, 71.428% 0, 85.714% 0, 100% 0;
 }
 
 /* column names */
 #chessboard:before, #chessboard:after {
   content: 'abcdefgh';
   color: black;
-  position: absolute;
   font-size: 5vmin;
-  line-height: 1.33em;             /* default value, override div:before */
-  letter-spacing: calc(10vmin - 1.33ex); /* approximate, depends on font */
-  font-family: monospace;    /* to minimize letter-spacing approximation */
-  font-size-adjust: 0.5;     /* to minimize letter-spacing approximation */
-  padding-left: calc(5vmin - 0.7ex);         /* position start of string */
-  width: calc(75vmin + 0.7ex);               /*     80vim - padding-left */
-  left: -2px;                                /*  chessboard border-width */
+  position: absolute;
+  width: 80vmin;
+  font-family: Lucida Console, Courier, monospace;            /* fixed width font */
+  letter-spacing: calc(10vmin - 1ch);   /* char spacing = cell width - char width */
+  padding-left: calc(5vmin - 0.5ch);                      /* half of char spacing */
 }
+ 
 #chessboard:before {
-  top: -1.33em;
+  top: -1.5em;                      /* positioned above chessboard */
 }
 #chessboard:after {
-  top: calc(80vmin + 0.33em);
+  top: calc(80vmin + 1vh + 0.33em); /* positioned under chessboard */
 }
 
-/* row numbers  */
-div:before, div:after {
-  content: '1' '\A' '2' '\A' '3' '\A' '4' '\A' '5' '\A' '6' '\A' '7' '\A' '8';
+/* row numbers */
+#container:before, #container:after {
+  content: '8' '\A' '7' '\A' '6' '\A' '5' '\A' '4' '\A' '3' '\A' '2' '\A' '1';
   color: black;
-  position: absolute;
   font-size: 5vmin;
-  font-family: monospace;
-  white-space: pre;
   line-height: 10vmin;
+  white-space: pre;
+  position: absolute;
   top: calc(50vh - 40vmin);
+  font-family: Lucida Console, Courier, monospace;
 }
-div:before {
-  left: calc(50vw - 45vmin);
+#container:before {
+  left: calc(50vw - 45vmin - 0.5ch);
 }
-div:after {
-  left: calc(50vw + 40vmin + 1.4ex);
+#container:after {
+  left: calc(51vw + 45vmin - 0.5ch);
 }
+
 
 /* chess pieces */
 span {
-  color: red;
   font-size: 9.6vmin;
   line-height: 10vmin;
   display: block;
@@ -96,7 +98,7 @@ span {
 .white { color: #a66; }
 
 /* classes for row positioning */
-.r8 { top:  0.4vmin; }
+.r8 { top: 0.4vmin; }
 .r7 { top: 10.4vmin; }
 .r6 { top: 20.4vmin; }
 .r5 { top: 30.4vmin; }
@@ -106,7 +108,7 @@ span {
 .r1 { top: 70.4vmin; }
 
 /* classes for column positioning */
-.a { left:  0.2vmin; }
+.a { left: 0.2vmin; }
 .b { left: 10.2vmin; }
 .c { left: 20.2vmin; }
 .d { left: 30.2vmin; }
@@ -117,10 +119,11 @@ span {
 
 </style>
 
-<!-- to carry row numbers -->
-<div>
+<!-- carries row numbers within CSS :before and :after pseudo-elements -->
+<div id="container">
 
-<!-- chessboard background is set using CSS -->
+<!-- has a tiled background -->
+<!-- carries column names within CSS :before and :after pseudo-elements -->
 <div id="chessboard">
 
  <!-- chess pieces are rendered via unicode characters -->
@@ -164,3 +167,4 @@ span {
 </div>
 
 </div>
+
