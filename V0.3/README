@@ -1,21 +1,18 @@
-chessboard.html V0.3
+chessboard.html
 
-  8x8 B&W tiled background
-
-  Draws 2 stripes of 8 black and white cells, which have 1/8 of the window width
-
-  Tested with
-    Firefox 20.0 for Windows
-    Chrome 26.0 for Windows
-    Opera 12.5 for Windows
-    Internet Explorer 10.0 for Windows
-
-  V0.3
+  V0.3 - 8x8 B&W tiled background
+  
   - Display 8 stripes resulting in tiled background. Position of stripe n is :
 
     x = (n * 1/8) + x * (n * 1/8)
 
     leading to : x = n / 7 with n taking 8 values from 0 to 7
+    
+  Tested with :
+    Firefox 20.0 for Windows
+    Chrome 26.0 for Windows
+    Opera 12.5 for Windows
+    Internet Explorer 10.0 for Windows
 
   V0.2
   - The tricky part as announced by Bert Bos during his talk, is about computing
