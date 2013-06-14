@@ -12,7 +12,6 @@ html, body {
   padding: 0;
   margin: 0;
   height: 100%;
-  background-color: white; /* fix ie's procopia client transparent buffer background */
 }
 
 /* chessboard size, position and background */
@@ -28,14 +27,14 @@ html, body {
   background-size: 12.5% 100%;
   background-repeat: no-repeat;
   background-image:
-    repeating-linear-gradient(black, black 12.5%, white 12.5%, white 25%)
-  , repeating-linear-gradient(white, white 12.5%, black 12.5%, black 25%)
+    repeating-linear-gradient(white, white 12.5%, black 12.5%, black 25%)
   , repeating-linear-gradient(black, black 12.5%, white 12.5%, white 25%)
   , repeating-linear-gradient(white, white 12.5%, black 12.5%, black 25%)
   , repeating-linear-gradient(black, black 12.5%, white 12.5%, white 25%)
   , repeating-linear-gradient(white, white 12.5%, black 12.5%, black 25%)
   , repeating-linear-gradient(black, black 12.5%, white 12.5%, white 25%)
   , repeating-linear-gradient(white, white 12.5%, black 12.5%, black 25%)
+  , repeating-linear-gradient(black, black 12.5%, white 12.5%, white 25%)
   ;
   background-position: 0 0, 14.286% 0, 28.571% 0, 42.857% 0, 57.143% 0, 71.428% 0, 85.714% 0, 100% 0;
 }
@@ -47,21 +46,21 @@ html, body {
   font-size: 5vmin;
   position: absolute;
   width: 80vmin;
-  font-family: Lucida Console, Courier, monospace;            /* fixed width font */
-  letter-spacing: calc(10vmin - 1ch);   /* char spacing = cell width - char width */
-  padding-left: calc(5vmin - 0.5ch);                      /* half of char spacing */
+  font-family: Lucida Console, Courier, monospace;
+  letter-spacing: calc(10vmin - 1ch);
+  padding-left: calc(5vmin - 0.5ch);
 }
  
 #chessboard:before {
-  top: -1.5em;                      /* positioned above chessboard */
+  top: -1.5em;
 }
 #chessboard:after {
-  top: calc(80vmin + 1vh + 0.33em); /* positioned under chessboard */
+  top: calc(80vmin + 1vh + 0.33em);
 }
 
 /* row numbers */
 #container:before, #container:after {
-  content: '1' '\A' '2' '\A' '3' '\A' '4' '\A' '5' '\A' '6' '\A' '7' '\A' '8';
+  content: '8' '\A' '7' '\A' '6' '\A' '5' '\A' '4' '\A' '3' '\A' '2' '\A' '1';
   color: black;
   font-size: 5vmin;
   line-height: 10vmin;
