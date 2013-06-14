@@ -1,8 +1,13 @@
 chessboard.html
 
   V0.5 - Centered chessboard with row and column annotations
-  - Annotations using before: and after: pseudo-elements are positioned
+  - Row and column labels are decoration, not content. For that reason
+    choice has been made to implement them using CSS. Annotations are
+    created with before: and after: pseudo-elements and positioned
     and dimensioned using CSS3 units.
+
+    Since it is impossible to have multiple :before or :after
+    pseudo-classes, an additional div embedding the chessboard is needed.
 
     Tested with :
 
