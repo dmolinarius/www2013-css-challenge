@@ -6,19 +6,21 @@ Centered Chessboard using CSS3 viewport percentage units, anc calc(), see :<br/>
 <br/>
 
 Tested with :
-- Firefox 20.0 for Windows ... [OK]
-- Internet Explorer 10.0 for Windows ... [partially OK]
+- Firefox 20.0 for Windows ... [[OK]](http://dmolinarius.github.io/www2013-css-challenge/V0.4/V0.4%20Firefox.png)
+
+- Internet Explorer 10.0 for Windows ... [[partially OK]](http://dmolinarius.github.io/www2013-css-challenge/V0.4/V0.4%20IE10.png)
   - chessboard properly centered, but no box-shadow :
         viewport units and calc() are not recognized in the
         context of box-shadow, even if those are properly interpreted
         to center the chessboard...
-- Chrome 26.0 for Windows ... [partially OK]
+
+- Chrome 26.0 for Windows ... [[partially OK]](http://dmolinarius.github.io/www2013-css-challenge/V0.4/V0.4%20Chrome.png)
   - displays rounding error at bottom of chessboard
   - properly scales the chessboard but doesn't position it properly
      (flags an invalid value for top and left)
   - no box-shadow
 
-- Opera 12.5 for Windows ... [NOT OK]
+- Opera 12.5 for Windows ... [[NOT OK]](http://dmolinarius.github.io/www2013-css-challenge/V0.4/V0.4%20Opera.png)
   - chessboard not centered, no box shadow
      (does not implement viewport units nor calc())
 </blockquote>
@@ -35,9 +37,9 @@ leading to : <code>x = n / 7</code> with n taking 8 values from 0 to 7.
 
 Tested with :
 - Firefox 20.0 for Windows ... [OK]
-- Internet Explorer 10.0 for Windows ... [OK]
 - Opera 12.5 for Windows ... [OK]
-- Chrome 26.0 for Windows ... [partially OK]
+- Internet Explorer 10.0 for Windows ... [[OK]](http://dmolinarius.github.io/www2013-css-challenge/V0.3/V0.3%20IE10.png)
+- Chrome 26.0 for Windows ... [[partially OK]](http://dmolinarius.github.io/www2013-css-challenge/V0.3/V0.3%20Chrome.png)
   - displays rounding error at bottom of chessboard
 </blockquote>
 
