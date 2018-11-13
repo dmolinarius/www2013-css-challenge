@@ -1,13 +1,19 @@
-#### [chessboard.html V0.2](http://dmolinarius.github.io/www2013-css-challenge/V0.2/chessboard.html) - 2 Vertical stripes of 8 black and white cells
-<blockquote>
-Draws 2 stripes of 8 black and white cells, which have 1/8 of the window width.<br/><br/>
-
+#### [chessboard.html V0.3](http://dmolinarius.github.io/www2013-css-challenge/V0.3/chessboard.html) - 8x8 B&W tiled background
+<blockquote> 
+Display 8 stripes resulting in tiled background. Position of stripe n is :
+```
+x = (n * 1/8) + x * (n * 1/8)
+```
+leading to : <code>x = n / 7</code> with n taking 8 values from 0 to 7
+ 
 Tested with :
 - Firefox 20.0 for Windows
 - Chrome 26.0 for Windows
 - Opera 12.5 for Windows
 - Internet Explorer 10.0 for Windows
 
+#### [V0.2](http://dmolinarius.github.io/www2013-css-challenge/V0.2/chessboard.html) - 2 Vertical stripes of 8 black and white cells
+<blockquote>
 The tricky part as announced by Bert Bos during his talk, is about computing the right percentage for background-position :
 ```
 background-position: 0 0, 14.286% 0;
