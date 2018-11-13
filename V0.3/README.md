@@ -11,6 +11,7 @@ Tested with :
 - Chrome 26.0 for Windows
 - Opera 12.5 for Windows
 - Internet Explorer 10.0 for Windows
+</blockquote>
 
 #### [V0.2](http://dmolinarius.github.io/www2013-css-challenge/V0.2/chessboard.html) - 2 Vertical stripes of 8 black and white cells
 <blockquote>
