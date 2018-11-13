@@ -10,7 +10,7 @@ Since it is impossible to have multiple :before or :after
 
 Tested with :
 
-- Firefox 20.0 for Windows ... [[OK]](http://dmolinarius.github.io/www2013-css-challenge/V0.5/V0.4%20Firefox.png)
+- Firefox 20.0 for Windows ... [[OK]](http://dmolinarius.github.io/www2013-css-challenge/V0.5/V0.5%20Firefox.png)
 
 - Internet Explorer 10.0 for Windows ... [[almost OK]](http://dmolinarius.github.io/www2013-css-challenge/V0.5/V0.5%20IE10.png)
   - chessboard shadow missing [(see V0.4)](http://dmolinarius.github.io/www2013-css-challenge/V0.4/V0.4%20IE10.png)
